@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="org.controlhoras.entity.Jornal" table="jornales">
+
+		<!-- <id name="idJornal" type="int" column="idJornal"> <generator class="increment" 
+			/> </id> <property name="fechaJornal" type="java.util.Date"> <column name="fechaJornal" 
+			/> </property> <many-to-one name="fechaJornal" class="org.controlhoras.entity.Jornal" 
+			fetch="select" lazy="false"> <column name="fecha_de_Jornal" not-null="true" 
+			unique-key="multicolumn_unique_key_name" /> </many-to-one> <many-to-one name="empleado" 
+			class="org.controlhoras.entity.Empleado" fetch="select" lazy="false"> <column 
+			name="empleado" precision="10" scale="0" not-null="true" unique-key="multicolumn_unique_key_name" 
+			/> </many-to-one> <many-to-one name="empleado" class="org.controlhoras.entity.Empleado" 
+			column="emp_id" unique="false" not-null="false" cascade="all" /> -->
+
+		<composite-id>
+			<key-property name="fechaJornal" column="fechaJornal" type="java.util.Date" />
+			<key-many-to-one name="empleado" class="org.controlhoras.entity.Empleado" column="emp_id"></key-many-to-one>
+			<!-- 
+				<key-property name="empleado" 	column="emp_id" type="int" />
+				<key-property name="empleado" column="mierda" type="int"/> 
+			-->
+		</composite-id>
+		
+		<property name="horaEntrada" column="horaEntrada" type="java.util.Date" />
+		<property name="horaSalida" column="horaSalida" type="java.util.Date" />
+
+
+
+	</class>
+
+</hibernate-mapping>
