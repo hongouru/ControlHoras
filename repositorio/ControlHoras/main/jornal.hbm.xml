@@ -17,7 +17,7 @@
 			/> </many-to-one> <many-to-one name="empleado" class="org.controlhoras.entity.Empleado" 
 			column="emp_id" unique="false" not-null="false" cascade="all" /> -->
 
-		<composite-id>
+		<composite-id>crea
 			<key-property name="fechaJornal" column="fechaJornal" type="java.util.Date" />
 			<key-many-to-one name="empleado" class="org.controlhoras.entity.Empleado" column="emp_id"></key-many-to-one>
 			<!-- 

@@ -6,13 +6,16 @@
 <hibernate-mapping>
 	
     <class name="org.controlhoras.entity.Empleado" table="empleados">
+        
         <id name="idEmpleado" type="int" column="idEmp">
             <generator class="increment" />
         </id>
+        
         <property name="nomEmpleado">
             <column name="nomEmp" />
-        </property>  
-                 
+           
+        </property>
+                          
     </class>
     
 </hibernate-mapping>
